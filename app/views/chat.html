@@ -1,0 +1,11 @@
+<div class="chat-body">
+    <ul class="messages">
+        <li class="message" ng-class="{ 'message--mine': m.authorId == chat.author.uid }" ng-repeat="m in chat.shownMessages">
+        <img class="message__photo" ng-src="{{m.authorPhoto}}" alt="">
+        <span class="message__author">{{m.authorName}}</span>
+        <div class="message__text">
+            {{m.text}}
+        </div>
+        </li>
+    </ul>
+</div>

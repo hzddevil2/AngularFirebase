@@ -1,0 +1,10 @@
+<div class="settings-body">
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="control-label" for="lastmessages">Number of messages: </label>
+            <input id="lastmessages" type="number" ng-model="chat.messageNumber" class="form-control" id="numberOfMessages" placeholder="Last messages" name="lastmessages" min="1" max="200" step="1" >
+            <button class="btn btn-green form-control" ng-click="chat.saveSettings()">Save settings</button>
+        </div>
+    </form> 
+</div>
+

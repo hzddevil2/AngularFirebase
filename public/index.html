@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularFirebase">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularFirebase</title>
+
+    <link rel="stylesheet" href="css/vendor.min.css">
+
+    <link rel="stylesheet" href="css/main.min.css">
+
+</head>
+<body>
+    <section class="main-page" ng-controller="chatCtrl as chat">
+        <div class="chat-window">
+                <div class="chat-header" >
+                        <ul class="nav nav-pills">
+                            <li menu-active role="presentation" ng-class="{ active: isActive('/') }"><a href="#/" >Chat</a></li>
+                            <li menu-active role="presentation" ng-class="{ active: isActive('/settings') }"><a href="#settings" >Settings</a></li>
+                        </ul>
+                    <div class="chat-header__author">
+                       {{chat.author.displayName}}
+                    </div>
+                    <div class="chat-header__btns">
+                        <button class="btn btn-green" ng-click="chat.login()" ng-if="!chat.author">Login</button>
+                        <button class="btn btn-red" ng-click="chat.logout()" ng-if="chat.author">Logout</button>
+                    </div>
+                </div>
+                    <div ng-view>
+                    </div>
+            <div class="chat-footer">
+                <textarea rows="5" ng-model="chat.newMessage" key-sender="chat.sendMessage()"></textarea>
+                <button class="btn btn-green" ng-click="chat.sendMessage()">Send message</button>
+            </div>
+        </div>
+    </section>
+    <script src="js/vendor.min.js"></script>
+
+
+    <script src="js/main.min.js"></script>
+</body>
+</html>
+
+
+
+
+
